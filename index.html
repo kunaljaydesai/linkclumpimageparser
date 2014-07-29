@@ -6,15 +6,157 @@
 
 function imgurl()
 {	
-
+	var height =[];
 	var text = document.getElementById("texting").value;
 	var length = text.length;
 	var lastindex = text.lastIndexOf("=");
-	var difference = length - text.lastIndexOf("imgurl=");
+	var difference = length - text.lastIndexOf("h=");
 
 	var andindex = text.indexOf("&");
 	var pusher;
-	var array;
+	var i = 0;
+	
+	while(text.length > difference){
+		var indexer = text.indexOf("h=") + 2;
+		//finds first imgrefurl and goes to its http value
+		text = text.substring(indexer, lastindex);
+		//changes text into a new substring going from the http value above and ends it at the last point in the entire string
+		var andindex = text.indexOf("&");
+		//finds the next & in the string which is right after the url
+		pusher = text.substring(0, andindex);
+		text = text.substring(andindex, lastindex);
+		console.log(pusher);
+		height[i] = pusher;
+		i++;
+		/*pusher = text.substring(indexer, andindex);
+		
+		text = text.substring(andindex+1, lastindex);
+		
+		var indeximgrefurl = text.indexOf("imgrefurl") + 15;
+		text = text.substring(indeximgrefurl, lastindex);
+		var indexhttp = text.indexOf("http");
+		text = text.substring(indexhttp, lastindex);
+		var h=document.createElement("p");
+		var t=document.createTextNode(pusher);
+		h.appendChild(t);
+		document.body.appendChild(h);*/
+		
+	}
+	var width =[];
+	var text = document.getElementById("texting").value;
+	var length = text.length;
+	var lastindex = text.lastIndexOf("=");
+	var difference = length - text.lastIndexOf("w=");
+
+	var andindex = text.indexOf("&");
+	var pusher;
+	var i = 0;
+	
+	while(text.length > difference){
+		var indexer = text.indexOf("w=") + 2;
+		//finds first imgrefurl and goes to its http value
+		text = text.substring(indexer, lastindex);
+		//changes text into a new substring going from the http value above and ends it at the last point in the entire string
+		var andindex = text.indexOf("&");
+		//finds the next & in the string which is right after the url
+		pusher = text.substring(0, andindex);
+		text = text.substring(andindex, lastindex);
+		console.log(pusher);
+		width[i] = pusher;
+		i++;
+		/*pusher = text.substring(indexer, andindex);
+		
+		text = text.substring(andindex+1, lastindex);
+		
+		var indeximgrefurl = text.indexOf("imgrefurl") + 15;
+		text = text.substring(indeximgrefurl, lastindex);
+		var indexhttp = text.indexOf("http");
+		text = text.substring(indexhttp, lastindex);
+		var h=document.createElement("p");
+		var t=document.createTextNode(pusher);
+		h.appendChild(t);
+		document.body.appendChild(h);*/
+		
+	}
+	var docid =[];
+	var text = document.getElementById("texting").value;
+	var length = text.length;
+	var lastindex = text.lastIndexOf("=");
+	var difference = length - text.lastIndexOf("docid=");
+
+	var andindex = text.indexOf("&");
+	var pusher;
+	var i = 0;
+	
+	while(text.length > difference){
+		var indexer = text.indexOf("docid=") + 6;
+		//finds first imgrefurl and goes to its http value
+		text = text.substring(indexer, lastindex);
+		//changes text into a new substring going from the http value above and ends it at the last point in the entire string
+		var andindex = text.indexOf("&");
+		//finds the next & in the string which is right after the url
+		pusher = text.substring(0, andindex);
+		text = text.substring(andindex, lastindex);
+		console.log(pusher);
+		docid[i] = pusher;
+		i++;
+		/*pusher = text.substring(indexer, andindex);
+		
+		text = text.substring(andindex+1, lastindex);
+		
+		var indeximgrefurl = text.indexOf("imgrefurl") + 15;
+		text = text.substring(indeximgrefurl, lastindex);
+		var indexhttp = text.indexOf("http");
+		text = text.substring(indexhttp, lastindex);
+		var h=document.createElement("p");
+		var t=document.createTextNode(pusher);
+		h.appendChild(t);
+		document.body.appendChild(h);*/
+		
+	}
+	var arr =[];
+	var text = document.getElementById("texting").value;
+	var length = text.length;
+	var lastindex = text.lastIndexOf("=");
+	var difference = length - text.lastIndexOf("imgrefurl=");
+
+	var andindex = text.indexOf("&");
+	var pusher;
+	var i = 0;
+	
+	while(text.length > difference){
+		var indexer = text.indexOf("imgrefurl=") + 10;
+		//finds first imgrefurl and goes to its http value
+		text = text.substring(indexer, lastindex);
+		//changes text into a new substring going from the http value above and ends it at the last point in the entire string
+		var andindex = text.indexOf("&");
+		//finds the next & in the string which is right after the url
+		pusher = text.substring(0, andindex);
+		text = text.substring(andindex, lastindex);
+		arr[i] = pusher;
+		i++;
+		/*pusher = text.substring(indexer, andindex);
+		
+		text = text.substring(andindex+1, lastindex);
+		
+		var indeximgrefurl = text.indexOf("imgrefurl") + 15;
+		text = text.substring(indeximgrefurl, lastindex);
+		var indexhttp = text.indexOf("http");
+		text = text.substring(indexhttp, lastindex);
+		var h=document.createElement("p");
+		var t=document.createTextNode(pusher);
+		h.appendChild(t);
+		document.body.appendChild(h);*/
+		
+	}
+	text = document.getElementById("texting").value;
+	length = text.length;
+	lastindex = text.lastIndexOf("=");
+	difference = length - text.lastIndexOf("imgurl=");
+
+	andindex = text.indexOf("&");
+	pusher;
+	i =0;
 	while(text.length > difference){
 		var indexer = text.indexOf("imgurl=") + 7;
 		var andindex = text.indexOf("&");
@@ -28,32 +170,30 @@ function imgurl()
 		text = text.substring(indexhttp, lastindex);
 		var h=document.createElement("p");
 		var t=document.createTextNode(pusher);
+
+		var a = document.createTextNode("| " + arr[i]);
+		var b = document.createTextNode("| " + height[i]);
+		var c = document.createTextNode("| " + width[i]);
+		var d = document.createTextNode("| " + docid[i]);
+		
 		h.appendChild(t);
+		
+		
+		h.appendChild(a);
+		h.appendChild(b);
+		h.appendChild(c);
+		h.appendChild(d);
 		document.body.appendChild(h);
-	}
-	//}
-	//var indexone = text.indexOf("http");
-	//var textone = substring.(indexone+4, text.length);
-	/*var indexone = text.indexOf("imgurl=");
-	var array;
-	while (indexone < text.length)
-	{
-		indexone = text.indexOf("http");
-		text = substring(indexone+4, text.length);
-		array.push(text);
-		console.log(text);
+		i++;
 
 
 	}
-	/*var firstindex = text.indexOf("imgurl=");
-	var firstindex = firstindex + 7;
-	var url = text.substring(firstindex, text.length);
-	var firstand = url.indexOf("&");
-	var urlshort = url.substring(0, firstand);
 	
-	console.log(urlshort);*/ 
+	
+	
 
 }
+
 
 </script>
 <input id="texting" type="text">
